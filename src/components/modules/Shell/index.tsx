@@ -15,7 +15,7 @@ const Shell = ({ children }: ShellProps) => {
 
   return (
     <div>
-      <Header />
+      <Header user="Tide Cardoso" />
       {isLoading ? <></> : <SideBar links={data!} />}
       <Container>{children}</Container>
     </div>
