@@ -36,7 +36,6 @@ export const useLogin = () => {
     form: UseFormReturnType<SignInForm>,
     formLogin: UseFormReturnType<LoginForm>
   ) => {
-    debugger;
     const allUsers = store.local.get('users') ?? [];
     const allUsersAtt = [...allUsers, form.values];
     store.local.set('users', allUsersAtt);

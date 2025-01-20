@@ -48,14 +48,10 @@ const LoginForm = () => {
     },
   });
 
-  const onSucessSignIn = useCallback(() => {}, [formSignin]);
-
   const handleMutatePostLogin = useMutation({
     mutationFn: () =>
       isSignin ? handlePostSignIn(formSignin, formLogin) : handlePostLogin(formLogin),
-    onSuccess: () => {
-      setIsSignIn(!isSignin);
-    },
+    onSuccess: () => isSignin && setIsSignIn(false),
   });
 
   const handleSubmitLogin = useCallback(
@@ -83,7 +79,7 @@ const LoginForm = () => {
         {!isSignin ? <LoginFormInputs form={formLogin} /> : <SignInFormInputs form={formSignin} />}
 
         <ButtonCustom type="submit" tipo="default" color={theme.colors.green} fullWidth>
-          ENTRAR
+          {isSignin ? 'CADASTRAR' : 'ENTRAR'}
         </ButtonCustom>
       </S.FormLogin>
       <div className="signin">
