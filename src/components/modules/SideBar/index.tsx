@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import ButtonCustom from '@/components/atomos/Button';
+import HamburguerButton from '@/components/atomos/HamburguerButton';
 import SidebarLink, { SidebarLinkProps } from '@/components/atomos/SidebarLink';
 import Logo from '../../../assets/imagens/logo.png';
 import { theme } from '../../../styles/theme';
@@ -6,11 +8,12 @@ import * as S from './styles';
 
 type SidebarProps = {
   links: Array<SidebarLinkProps>;
+  isToogleMobile: boolean;
 };
 
-const SideBar = ({ links }: SidebarProps) => {
+const SideBar = ({ links, isToogleMobile }: SidebarProps) => {
   return (
-    <S.SidebarWrapper>
+    <S.SidebarWrapper style={{ display: isToogleMobile ? 'block' : 'none' }}>
       <S.LogoWrapper>
         <img title="Meu Banco App" src={Logo} alt="Meu Banco" />
       </S.LogoWrapper>

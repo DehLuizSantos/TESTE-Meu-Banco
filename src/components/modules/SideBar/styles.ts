@@ -3,6 +3,8 @@ import styled, { css } from 'styled-components';
 export const SidebarWrapper = styled.aside`
   ${({ theme }) => css`
     display: none;
+    background-color: white;
+    padding-top: 24px;
 
     @media (min-width: ${theme.responsive.md}) {
       display: block;
@@ -27,15 +29,20 @@ export const MenuSidebarWrapper = styled.div`
 
 export const HelpSidebarFooter = styled.div`
   ${({ theme }) => css`
-    background-color: ${theme.colors.green};
-    color: ${theme.colors.white};
-    border-radius: 6px;
-    padding: 16px;
-    width: 220px;
-    height: 198px;
-    position: fixed;
-    bottom: 24px;
-    left: 30px;
+    display: none;
+
+    @media (min-width: ${theme.responsive.md}) {
+      display: block;
+      background-color: ${theme.colors.green};
+      color: ${theme.colors.white};
+      border-radius: 6px;
+      padding: 16px;
+      width: 220px;
+      height: 198px;
+      position: relative;
+      bottom: -300px;
+      left: 30px;
+    }
 
     .description {
       max-width: 150px;

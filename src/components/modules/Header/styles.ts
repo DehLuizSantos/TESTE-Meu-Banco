@@ -3,12 +3,13 @@ import styled, { css } from 'styled-components';
 export const HeaderContainer = styled.header`
   ${({ theme }) => css`
     width: 100%;
-    background-color: ${theme.colors.green};
+    /* background-color: ${theme.colors.green}; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 30px 35px 22px 35px;
     flex-wrap: wrap;
+    max-width: calc(1440px - 280px);
 
     @media (min-width: ${theme.responsive.md}) {
       position: relative;

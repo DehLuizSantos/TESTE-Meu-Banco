@@ -13,9 +13,12 @@ export const LinkDescription = styled.div`
     align-items: center;
     justify-content: start;
     gap: 16px;
-    width: 240px;
     height: 54px;
     border-radius: 12px 0 0 12px;
+
+    @media (min-width: ${theme.responsive.md}) {
+      width: 240px;
+    }
 
     span {
       font-size: ${theme.sizes.meddium};

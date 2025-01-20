@@ -36,8 +36,9 @@ export const ButtonOutline = styled(Button)<ButtonCustomProps>`
     font-size: ${theme.sizes.meddium};
 
     &:hover {
-      box-shadow: 0px 2px 2px 0px ${color};
-      color: ${color};
+      background-color: ${theme.colors.white};
+      color: ${theme.colors.green};
+      box-shadow: 0px 2px 3px 0px ${theme.colors.white};
     }
 
     &:active {
