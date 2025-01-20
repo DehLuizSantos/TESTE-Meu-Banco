@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { theme } from '../../../styles/theme';
 import Icon from '../Icon';
@@ -12,7 +11,6 @@ export type SidebarLinkProps = {
 
 const SidebarLink = ({ icon, label, to }: SidebarLinkProps) => {
   const location = useLocation();
-  console.log(location);
 
   return (
     <S.LinkWrapper to={to}>

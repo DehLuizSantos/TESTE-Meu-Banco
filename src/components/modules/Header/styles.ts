@@ -2,14 +2,20 @@ import styled, { css } from 'styled-components';
 
 export const HeaderContainer = styled.header`
   ${({ theme }) => css`
-    position: relative;
-    left: 280px;
-    width: calc(100% - 280px);
-    padding: 30px 35px 30px 35px;
-    background-color: ${theme.colors.green};
+    width: 100%;
+    /* background-color: ${theme.colors.green}; */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 30px 35px 22px 35px;
+    flex-wrap: wrap;
+    max-width: calc(1440px - 280px);
+
+    @media (min-width: ${theme.responsive.md}) {
+      position: relative;
+      left: 280px;
+      width: calc(100% - 280px);
+    }
   `}
 `;
 
@@ -19,6 +25,11 @@ export const UserInformations = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 250px;
+    margin: 16px 0;
+
+    @media (min-width: ${theme.responsive.md}) {
+      margin: 0;
+    }
 
     .user {
       display: flex;
@@ -34,6 +45,7 @@ export const UserInformations = styled.div`
       span {
         color: ${theme.colors.white};
         font-weight: 700;
+        margin-left: 10px;
         font-size: ${theme.sizes.small};
       }
     }

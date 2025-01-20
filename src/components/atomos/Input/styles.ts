@@ -75,10 +75,8 @@ export const InputDePassword = styled(PasswordInput)`
     }
 
     input {
-      padding-left: 45px;
-
       &::placeholder {
-        color: ${theme.colors.gray['500']};
+        color: ${theme.colors.gray};
       }
     }
   `}

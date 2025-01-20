@@ -12,6 +12,8 @@ export const commonColors = {
 };
 
 export const primaryColors = {
+  lightGray: '#EAE9E9',
+  mediumGray: '#B5B5B5',
   gray: '#484848',
   white: '#FAFAFA',
   green: ' #1BC681',
