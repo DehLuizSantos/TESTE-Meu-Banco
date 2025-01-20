@@ -1,12 +1,12 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Shell from './components/modules/Shell';
-import { HomePage } from './pages/Home.page';
+import Login from './pages/Login';
 import Painel from './pages/Painel';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
+    element: <Login />,
   },
   {
     path: '/painel',
