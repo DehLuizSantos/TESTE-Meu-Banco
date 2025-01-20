@@ -34,6 +34,7 @@ export const UserInformations = styled.div`
       span {
         color: ${theme.colors.white};
         font-weight: 700;
+        margin-left: 10px;
         font-size: ${theme.sizes.small};
       }
     }

@@ -48,6 +48,8 @@ const InputCustom = ({
           <S.InputDePassword
             color={color}
             placeholder={placeholder}
+            label={props.label}
+            mb={props.mb}
             onChange={props.onChange}
             error={props.error}
             value={props.value}

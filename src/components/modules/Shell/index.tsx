@@ -1,5 +1,6 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
+import store from 'store2';
 import { useLinks } from '@/hooks/useLinks';
 import Container from '../Container';
 import Header from '../Header';
@@ -11,11 +12,11 @@ type ShellProps = {
 const Shell = ({ children }: ShellProps) => {
   const { handleGetLinks } = useLinks();
   const { data, isLoading } = useQuery({ queryKey: ['links'], queryFn: () => handleGetLinks() });
-  console.log(data);
+  const name = store.local.get('email').split('@')[0] ?? '';
 
   return (
     <div>
-      <Header user="Tide Cardoso" />
+      <Header user={name} />
       {isLoading ? <></> : <SideBar links={data!} />}
       <Container>{children}</Container>
     </div>

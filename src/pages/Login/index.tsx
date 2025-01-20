@@ -1,3 +1,4 @@
+import { Notification } from '@mantine/core';
 import LoginForm from '@/components/organisms/LoginForm';
 import logo from '../../assets/imagens/logo-white.svg';
 import * as S from './styles';

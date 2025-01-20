@@ -48,6 +48,7 @@ export const LoginFormWrapper = styled.div`
 export const FormLogin = styled.form`
   ${({ theme }) => css`
     margin-top: 48px;
+
     a {
       color: ${theme.colors.blue};
     }
@@ -56,6 +57,10 @@ export const FormLogin = styled.form`
       display: flex;
       justify-content: space-between;
       margin: 24px 0;
+    }
+
+    .confirm-password {
+      margin-bottom: 16px;
     }
   `}
 `;
