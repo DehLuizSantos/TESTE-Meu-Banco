@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import store from 'store2';
 import { UseFormReturnType } from '@mantine/form';
-import { isValidUser } from '@/utils/validateEmail';
+import { isUserAlreadyRegistered, isValidUser } from '@/utils/validateEmail';
 
 export type LoginForm = {
   email: string;
@@ -36,9 +36,17 @@ export const useLogin = () => {
     form: UseFormReturnType<SignInForm>,
     formLogin: UseFormReturnType<LoginForm>
   ) => {
+    debugger;
     const allUsers = store.local.get('users') ?? [];
     const allUsersAtt = [...allUsers, form.values];
     store.local.set('users', allUsersAtt);
+
+    const isUserExist = isUserAlreadyRegistered(form.values, allUsers);
+
+    if (isUserExist) {
+      toast.error('Já existe um usuário com este email');
+      return;
+    }
     form.reset();
     toast.success('Usuário criado com sucesso!');
     formLogin.setValues({ email: form.values.email, password: form.values.password });
