@@ -1,12 +1,17 @@
 import styled, { css } from 'styled-components';
 
 export const SidebarWrapper = styled.aside`
-  ${() => css`
-    position: fixed;
-    width: 280px;
-    height: 100vh;
-    top: 0;
-    bottom: 0;
+  ${({ theme }) => css`
+    display: none;
+
+    @media (min-width: ${theme.responsive.md}) {
+      display: block;
+      position: fixed;
+      width: 280px;
+      height: 100vh;
+      top: 0;
+      bottom: 0;
+    }
   `}
 `;
 

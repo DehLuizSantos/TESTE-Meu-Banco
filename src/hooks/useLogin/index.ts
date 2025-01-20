@@ -20,8 +20,8 @@ export const useLogin = () => {
   const navigate = useNavigate();
   const handlePostLogin = async (form: UseFormReturnType<LoginForm>) => {
     const allUsers = store.local.get('users') ?? [];
-    const result = isValidUser(form, allUsers);
-    if (result) {
+    const isUserValid = isValidUser(form, allUsers);
+    if (isUserValid) {
       toast.success(`Seja bem vindo! ${form.values.email}`);
       store.local.set('email', form.values.email);
       navigate('/painel');
