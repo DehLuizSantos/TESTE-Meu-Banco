@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const CardInfoWrapper = styled.div`
   ${({ theme }) => css`
     margin: 16px 0;
-    padding: 16px;
+    padding: 15px;
     background-color: ${theme.colors.white};
     box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 8px;
@@ -17,7 +17,7 @@ export const CardInfoWrapper = styled.div`
       color: ${theme.colors.green};
       font-weight: 300;
       font-size: ${theme.sizes.large};
-      margin-bottom: 31px;
+      margin-bottom: 16px;
     }
 
     p {
