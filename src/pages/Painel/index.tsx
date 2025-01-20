@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import CardDetails from '@/components/moleculas/CardDetails';
+import Extract from '@/components/moleculas/Extract';
 import PainelConfigurations from '@/components/moleculas/PainelConfigurations';
 import { useConfigurations } from '@/hooks/useConfigurations';
 import * as S from './styles';
@@ -10,7 +11,6 @@ const Painel = () => {
     queryKey: ['configurations'],
     queryFn: () => handleGetconfigurations(),
   });
-  console.log(data);
 
   return (
     <S.PainelWrapper>
@@ -19,7 +19,10 @@ const Painel = () => {
       ) : (
         <div className="container">
           <PainelConfigurations cardsInfos={data?.painel!} />
-          <CardDetails {...data?.card} />
+          <div className="footer">
+            <CardDetails {...data?.card} />
+            <Extract data={data?.data!} />
+          </div>
         </div>
       )}
     </S.PainelWrapper>

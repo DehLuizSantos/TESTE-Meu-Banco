@@ -21,6 +21,13 @@ export function isUserAlreadyRegistered(form: User, existingUsers: User[]): bool
   return userExists; // Retorna false se o usuário já existir, caso contrário, retorna true
 }
 
-export function formatNumber(num: string) {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+export function formatNumber(num: number) {
+  // Converte para string e separa parte inteira e decimal
+  const [integerPart, decimalPart] = num.toFixed(2).split('.');
+
+  // Formata a parte inteira com separadores de milhar
+  const formattedInteger = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+
+  // Retorna o número formatado com a vírgula como separador decimal
+  return `${formattedInteger},${decimalPart}`;
 }

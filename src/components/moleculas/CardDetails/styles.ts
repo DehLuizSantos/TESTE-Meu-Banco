@@ -10,7 +10,9 @@ export const CardDetailsContainer = styled.div`
     max-width: 532px;
     width: 100%;
     margin: 16px 0;
+
     @media (min-width: ${theme.responsive.md}) {
+      max-height: 300px;
       margin: 0 36px;
     }
 

@@ -7,14 +7,16 @@ import { formatNumber } from '@/utils/validateEmail';
 import card from '../../../assets/imagens/cartao.svg';
 import * as S from './styles';
 
+export type PurchaceProps = {
+  local?: string;
+  value?: number;
+  type?: 'debito' | 'credito';
+};
+
 export type CardDetailsProps = {
   totalLimit?: number;
   usedLimit?: number;
-  lastPurchase?: {
-    local?: string;
-    value?: number;
-    type?: 'debito' | 'credito';
-  };
+  lastPurchase?: PurchaceProps;
   creditCard?: {
     cardHolder: string;
     cardNumber: string;
@@ -34,14 +36,14 @@ const CardDetails = ({ totalLimit, usedLimit, lastPurchase, creditCard }: CardDe
           <div className="limit">
             <span>Limite mensal</span>
             <div className="value">
-              <span className="value">R${formatNumber(String(usedLimit))}/</span>
-              <span className="value">{formatNumber(String(totalLimit))}</span>
+              <span className="value">R${formatNumber(usedLimit!)}/</span>
+              <span className="value">{formatNumber(totalLimit!)}</span>
             </div>
           </div>
         </S.CartLimitContainer>
         <S.LimitDescription>
           <p>Limite disponível</p>
-          <h6>R$ {formatNumber(String(totalLimit))}</h6>
+          <h6>R$ {formatNumber(totalLimit!)}</h6>
 
           <p>Última compra</p>
 

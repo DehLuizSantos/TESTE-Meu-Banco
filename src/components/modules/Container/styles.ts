@@ -11,7 +11,6 @@ export const ContainerWrapper = styled.div`
     @media (min-width: ${theme.responsive.md}) {
       position: relative;
       left: 280px;
-      height: calc(100vh - 96px);
       display: block;
     }
   `}

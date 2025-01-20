@@ -6,6 +6,7 @@ import servicos from '../src/assets/icons/servicos.svg';
 import transferencia from '../src/assets/icons/transferencia.svg';
 import { CardInfoProps } from './components/atomos/CardInfo';
 import { CardDetailsProps } from './components/moleculas/CardDetails';
+import { ExtractProps } from './components/moleculas/Extract';
 
 export const painelProps: Array<CardInfoProps> = [
   {
@@ -47,6 +48,31 @@ export const card: CardDetailsProps = {
   },
   totalLimit: 3000,
   usedLimit: 300,
+};
+
+export const extract: ExtractProps = {
+  data: [
+    {
+      date: '03/jan',
+      purchace: [
+        { local: 'Bazar Mizutu', type: 'credito', value: 300 },
+        { local: 'Lanchonete Dez', type: 'debito', value: 125 },
+        { local: 'Loja Tatame velho', type: 'debito', value: 700 },
+      ],
+    },
+    {
+      date: '02/jan',
+      purchace: [
+        { local: 'Bazar Mizutu', type: 'debito', value: 12 },
+        { local: 'Lanchonete Dez', type: 'debito', value: 85 },
+        { local: 'Loja Tatame velho', type: 'debito', value: 200 },
+      ],
+    },
+    {
+      date: '01/jan',
+      purchace: [{ local: 'Restaurante Italiano', type: 'debito', value: 300 }],
+    },
+  ],
 };
 
 export const links: Array<SidebarLinkProps> = [
