@@ -7,7 +7,7 @@ export function pxToRem(pxValue: number) {
 export const commonColors = {
   success: '#03C668',
   alert: '#FFd638',
-  blue: '#3532a4',
+  blue: '#43B7FF',
   red: '#DE0015',
 };
 
@@ -15,6 +15,7 @@ export const primaryColors = {
   gray: '#484848',
   white: '#FAFAFA',
   green: ' #1BC681',
+  dark: '#1E1E1E',
 };
 
 export const fontSizes = {

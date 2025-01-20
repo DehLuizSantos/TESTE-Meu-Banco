@@ -1,8 +1,17 @@
+import LoginForm from '@/components/organisms/LoginForm';
+import logo from '../../assets/imagens/logo-white.svg';
+import * as S from './styles';
+
 const Login = () => {
   return (
-    <div>
-      <h1>Login</h1>
-    </div>
+    <S.LoginWrapper>
+      <aside>
+        <img src={logo} alt="Meu banco" title="Meu banco" />
+      </aside>
+      <S.LoginFormWrapper>
+        <LoginForm />
+      </S.LoginFormWrapper>
+    </S.LoginWrapper>
   );
 };
 
