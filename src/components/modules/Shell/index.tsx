@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import store from 'store2';
+import { FadingComponent } from '@/components/Fade';
 import { useLinks } from '@/hooks/useLinks';
 import Container from '../Container';
 import Header from '../Header';
@@ -18,7 +19,9 @@ const Shell = ({ children }: ShellProps) => {
     <div>
       <Header user={name} />
       {isLoading ? <></> : <SideBar links={data!} />}
-      <Container>{children}</Container>
+      <Container>
+        <FadingComponent duration={100}>{children}</FadingComponent>
+      </Container>
     </div>
   );
 };

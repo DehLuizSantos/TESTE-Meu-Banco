@@ -4,7 +4,8 @@ import { Button } from '@mantine/core';
 
 export const BotaoDefault = styled(Button)<ButtonCustomProps>`
   ${({ theme, color }) => css`
-    font-weight: bold;
+    font-weight: 600;
+    font-size: ${theme.sizes.meddium};
 
     &:hover {
       border: 1px solid ${color};

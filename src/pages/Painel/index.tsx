@@ -1,37 +1,27 @@
-import { CardInfoProps } from '@/components/atomos/CardInfo';
+import { useQuery } from '@tanstack/react-query';
+import CardDetails from '@/components/moleculas/CardDetails';
 import PainelConfigurations from '@/components/moleculas/PainelConfigurations';
+import { useConfigurations } from '@/hooks/useConfigurations';
 import * as S from './styles';
 
 const Painel = () => {
-  const painelProps: Array<CardInfoProps> = [
-    {
-      percentege: '+23%',
-      type: 'default',
-      info: 'Gasto esse mês',
-      value: 'R$ 3.547,67',
-    },
-    {
-      percentege: '+23%',
-      type: 'default',
-      info: 'Gasto esse mês',
-      value: 'R$ 3.547,67',
-    },
-    {
-      percentege: '+23%',
-      type: 'default',
-      info: 'Gasto esse mês',
-      value: 'R$ 3.547,67',
-    },
-    {
-      percentege: '+23%',
-      type: 'default',
-      info: 'Gasto esse mês',
-      value: 'R$ 3.547,67',
-    },
-  ];
+  const { handleGetconfigurations } = useConfigurations();
+  const { data, isLoading } = useQuery({
+    queryKey: ['configurations'],
+    queryFn: () => handleGetconfigurations(),
+  });
+  console.log(data);
+
   return (
     <S.PainelWrapper>
-      <PainelConfigurations cardsInfos={painelProps} />
+      {isLoading ? (
+        <></>
+      ) : (
+        <div className="container">
+          <PainelConfigurations cardsInfos={data?.painel!} />
+          <CardDetails {...data?.card} />
+        </div>
+      )}
     </S.PainelWrapper>
   );
 };

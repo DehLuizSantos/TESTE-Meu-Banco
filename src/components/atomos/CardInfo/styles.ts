@@ -7,6 +7,10 @@ export const CardInfoWrapper = styled.div`
     background-color: ${theme.colors.white};
     box-shadow: 0px 4px 4px 0px #00000040;
     border-radius: 8px;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 
     @media (min-width: ${theme.responsive.md}) {
       width: 205px;
@@ -30,6 +34,14 @@ export const CardInfoWrapper = styled.div`
       font-size: ${theme.sizes.large};
       font-weight: 700;
       color: ${theme.colors.dark};
+    }
+
+    .percentege {
+      padding: 4px 8px;
+      background-color: ${theme.colors.green};
+      color: ${theme.colors.white};
+      border-radius: 4px;
+      margin-bottom: 21px;
     }
   `}
 `;

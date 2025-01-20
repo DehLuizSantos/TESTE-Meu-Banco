@@ -18,7 +18,7 @@ export const PainelConfigurationsWrapper = styled.div`
 
 export const PainelConfigurationsShortCut = styled.div`
   ${({ theme }) => css`
-    width: 200px;
+    width: 205px;
     border-radius: 8px;
     text-align: center;
     background-color: ${theme.colors.lightGray};

@@ -20,3 +20,7 @@ export function isUserAlreadyRegistered(form: User, existingUsers: User[]): bool
 
   return userExists; // Retorna false se o usuário já existir, caso contrário, retorna true
 }
+
+export function formatNumber(num: string) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}

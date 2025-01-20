@@ -6,6 +6,7 @@ export const ContainerWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 64px;
 
     @media (min-width: ${theme.responsive.md}) {
       position: relative;
